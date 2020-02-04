@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="amountSelect.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <section class="products-section">
+            <h2 class="main-title">Cassa</h2>
+            <div class="products-wrap">
+                <div class="product-wrap">
+                    <h3 class="product-title">Pineapple</h3>
+                    <div class="product-img-wrap first-product-img-wrap">
+                        <img src="assets/images/product.png" alt="" class="product-img">
+                    </div>
+                    <div class="product-information">
+                        <p class="discount-info">Offerta limitata -50%</p>
+                        <p class="price">$8.50 <span class="old-price">19.00$</span></p>
+                    </div>
+                    <div class="amount-basket">
+                        <div class="amount-wrap">
+
+                            <div class="select-wrap" data-select="active" >
+                                <select class="amount-select" name="" onchange="" onclick="return false;" id="">
+                                    <option value="">Seleciona una Opcion </option>
+                                    <option value="1">Select option 1</option>
+                                    <option value="2" >Select option 2</option>
+                                    <option value="3">Select option 3</option>
+                                </select>
+
+                                <p class="selected-option"  onclick="openSelect(this)" ></p>
+
+                                <span onclick="openSelect(this)" class="select-icon" >
+                                    <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
+                                        <path d="M0-.75h24v24H0z" fill="none"/>
+                                    </svg>
+                                </span>
+
+                                <div class="options-list-wrap">
+                                    <ul class="options-list">  </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="basket-wrap">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="product-wrap">
+                    <h3 class="product-title">Berries </h3>
+                    <div class="product-img-wrap">
+                        <img src="assets/images/product-2.png" alt="" class="product-img">
+                    </div>
+                    <div class="product-information">
+                        <p class="discount-info">Offerta limitata -50%</p>
+                        <p class="price">$8.50 <span class="old-price">19.00$</span></p>
+                    </div>
+                    <div class="amount-basket">
+                        <div class="amount-wrap">
+                            3
+                        </div>
+                        <div class="basket-wrap">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="product-wrap">
+                    <h3 class="product-title">Grapefruit</h3>
+                    <div class="product-img-wrap">
+                        <img src="assets/images/product-3.png" alt="" class="product-img">
+                    </div>
+                    <div class="product-information">
+                        <p class="discount-info">Offerta limitata -50%</p>
+                        <p class="price">$8.50 <span class="old-price">19.00$</span></p>
+                    </div>
+                    <div class="amount-basket">
+                        <div class="amount-wrap">
+                            3
+                        </div>
+                        <div class="basket-wrap">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="product-wrap">
+                    <h3 class="product-title">Apple</h3>
+                    <div class="product-img-wrap">
+                        <img src="assets/images/product-4.png" alt="" class="product-img">
+                    </div>
+                    <div class="product-information">
+                        <p class="discount-info">Offerta limitata -50%</p>
+                        <p class="price">$8.50 <span class="old-price">19.00$</span></p>
+                    </div>
+                    <div class="amount-basket">
+                        <div class="amount-wrap">
+                            3
+                        </div>
+                        <div class="basket-wrap">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
