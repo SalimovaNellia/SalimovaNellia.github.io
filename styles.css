@@ -9,12 +9,23 @@
     src: url("assets/fonts/bebasneue/bebasneuebook.woff")  format("woff");
 }
 
+@font-face {
+    font-family: "Gilroy Light";
+    src: url("assets/fonts/gilroy/Gilroy-Light.woff")  format("woff");
+}
+
+@font-face {
+    font-family: "Gilroy ExtraBold";
+    src: url("assets/fonts/gilroy/Gilroy-ExtraBold.woff")  format("woff");
+}
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    border: none;
 }
 
 body {
@@ -224,11 +235,13 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
+    max-height: 100%;
     background-color: rgba(0, 0, 0, 0.77);
+    overflow-y: scroll;
 }
 
 .popup-order {
-    width: 24.48%;
+    width: 470px;
     margin-left: auto;
     background-color: #fff;
 }
@@ -239,17 +252,112 @@ body {
     padding: 93px 58px 75px;
     background-color: #ff943d;
     text-align: center;
+    cursor: pointer;
 }
 
 .close-basket-icon {
+    display: inline-block;
+    position: absolute;
+    left: -98px;
+    top: 8px;
     width: 20px;
     height: 32px;
     background-image: url(assets/images/arrow.png);
 }
 
 .basket-title {
+    position: relative;
     font-size: 3.6rem;
     letter-spacing: 1px;
 }
 
+.order-list {
+    padding: 33px 58px 0;
+}
 
+.product-in-order {
+    display: flex;
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.product-in-order:last-child {
+    margin-bottom: 0;
+}
+
+.ordered-product-img {
+    width: 21.43%;
+    margin-right: 27px;
+    padding-top: 3px;
+}
+
+.ordered-product-img .product-img {
+    width: 100%;
+}
+
+.ordered-product-info {
+    width: 78.57%;
+    color: #000;
+    font-family: "Gilroy Light", serif;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: -0.6px;
+    line-height: 22px;
+}
+
+.product-subtitle {
+    font-size: 1.5rem;
+    margin-top: 13px;
+    letter-spacing: 0;
+}
+
+.ordered-product-info .price {
+    font-family: "Gilroy ExtraBold", serif;
+    text-align: left;
+    font-size: 1.4rem;
+    margin-top: 11px;
+}
+
+.total-wrap {
+    padding-top: 36px;
+    padding-left: 60px;
+    padding-bottom: 25px;
+    color: #000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    font-family: "Gilroy Light", serif;
+    text-transform: uppercase;
+    font-size: 1.9rem;
+    letter-spacing: -0.4px;
+}
+
+.total-sum {
+    font-size: 2.9rem;
+    letter-spacing: 0.9px;
+}
+
+.order-submit-wrap {
+    text-align: center;
+}
+
+.order-submit-btn {
+    margin-top: 22px;
+    margin-bottom: 20px;
+    padding: 20px 42px 18px 45px;
+    border-radius: 6px;
+    background-color: #faa21b;
+    color: #fff;
+    font-family: "Gilroy ExtraBold", serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+    transition: all 0.8s;
+    cursor: pointer;
+}
+
+.order-submit-btn:hover {
+    background-color: #323232;
+}
+
+.order-submit-btn:focus {
+    outline: none;
+}
