@@ -135,6 +135,7 @@ body {
     position: relative;
     padding: 16px 12px 5px;
     border-bottom: 3px solid #fff;
+    cursor: pointer;
 }
 
 .selected-number {
@@ -152,23 +153,21 @@ body {
 }
 
 .options-list-wrap {
-    display: none;
-    max-height: 0;
-}
-
-.options-list-wrap.open {
-    display: block;
     position: absolute;
     top: 48px;
     left: -37px;
     width: 122px;
-    max-height: 187px;
-    padding-top: 16px;
+    height: 0;
     padding-left: 13px;
     background: rgba(50, 50, 50, 0.2);
     overflow-y: scroll;
-    transition: height 3s linear;
-    transition-delay: 1s;
+    transition: all .5s ease;
+}
+
+.options-list-wrap.open {
+    display: block;
+    height: 187px;
+    padding-top: 16px;
 }
 
 .options-list-wrap::-webkit-scrollbar {
@@ -184,10 +183,16 @@ body {
 }
 
 .options-list {
-     list-style-type: none;
-     margin: 0;
-     padding: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    max-height: 0;
+    transition: max-height .6s 2s;
  }
+
+.options-list-wrap.open .options-list {
+    max-height: 100%;
+}
 
 .option span {
     display: inline-block;

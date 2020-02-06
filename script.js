@@ -41,7 +41,7 @@ function createOptionList() {
         optionsList.appendChild(li);
     }
 
-    let selectIcon = document.getElementById("selectIcon");
-    selectIcon.onclick = openList;
+    let dropDown = document.getElementById("dropDown");
+    dropDown.onclick = openList;
 }
 
