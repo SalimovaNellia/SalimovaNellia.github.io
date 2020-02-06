@@ -153,6 +153,7 @@ body {
 
 .options-list-wrap {
     display: none;
+    max-height: 0;
 }
 
 .options-list-wrap.open {
@@ -166,6 +167,8 @@ body {
     padding-left: 13px;
     background: rgba(50, 50, 50, 0.2);
     overflow-y: scroll;
+    transition: height 3s linear;
+    transition-delay: 1s;
 }
 
 .options-list-wrap::-webkit-scrollbar {
@@ -230,6 +233,8 @@ body {
 
 
 .popup-order-wrap {
+    display: none;
+    opacity: 0;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -238,12 +243,46 @@ body {
     max-height: 100%;
     background-color: rgba(0, 0, 0, 0.77);
     overflow-y: scroll;
+    animation-duration: 1s;
+    animation-name: opacity;
+}
+
+.popup-order-wrap.open {
+    display: block;
+    opacity: 1;
+}
+
+@keyframes opacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes popup {
+    from {
+        right: -470px;
+    }
+    to {
+        right: 0;
+    }
 }
 
 .popup-order {
+    position: absolute;
+    display: none;
     width: 470px;
-    margin-left: auto;
     background-color: #fff;
+}
+
+.popup-order-wrap.open .popup-order {
+    display: block;
+    right: 0;
+    animation-name: popup, opacity;
+    animation-duration: 0.7s, 1s;
 }
 
 .close-basket {
