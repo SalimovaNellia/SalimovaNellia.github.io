@@ -7,7 +7,7 @@ window.onload = function(){
             toggleBasket();
         }
 
-        if (target.classList.contains("open")) {
+        if (target.classList.contains("popup-order-wrap")) {
             toggleBasket();
         }
     });
@@ -23,25 +23,39 @@ function toggleBasket() {
 }
 
 function openList() {
-    let optionsList = document.getElementById("optionsListWrap");
-    optionsList.classList.toggle("open");
+    let optionsList = this.getElementsByClassName("options-list-wrap");
+    optionsList[0].classList.toggle("open");
+    onClickCloseList(this);
 }
 
 
 function createOptionList() {
-    let optionsList = document.getElementById("optionsList");
+    let optionsList = [...document.getElementsByClassName("options-list")];
+    optionsList.forEach(list => addList(list));
 
-    for (let i = 0; i <= 49; i++) {
-        let li = document.createElement("li");
-        li.className = "option";
-        li.id = "option-" + i;
-        let span = document.createElement("span");
-        span.innerHTML = i + 1;
-        li.appendChild(span);
-        optionsList.appendChild(li);
+    function addList(list) {
+        for (let i = 0; i <= 49; i++) {
+            let li = document.createElement("li");
+            li.className = "option";
+            li.id = "option-" + i;
+            let span = document.createElement("span");
+            span.innerHTML = i + 1;
+            li.appendChild(span);
+            list.appendChild(li);
+        }
     }
 
-    let dropDown = document.getElementById("dropDown");
-    dropDown.onclick = openList;
+    let dropDownArray = [...document.getElementsByClassName("select-wrap")];
+    dropDownArray.forEach(dropDown => dropDown.onclick = openList);
+}
+
+function onClickCloseList(elem) {
+    function outsideClickListener(event) {
+        if (!elem.contains(event.target) ) {
+            elem.querySelector(".options-list-wrap").classList.toggle("open");
+            document.removeEventListener('click', outsideClickListener);
+        }
+    }
+    document.addEventListener('click', outsideClickListener)
 }
 
